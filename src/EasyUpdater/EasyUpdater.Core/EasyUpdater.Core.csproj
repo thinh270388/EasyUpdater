@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>EasyUpdater.Core</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>LPNT</Authors>
+    <Company>EasyMix</Company>
+    <Description>Easy updater - WPF</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AppName>EasyUpdater</AppName>
+    <GitHubUser>thinh270388</GitHubUser>
+    <GitHubRepo>EasyUpdater</GitHubRepo>
+    <ZipFileName>$(AppName)-v$(AppVersion).zip</ZipFileName>
+    <ZipUrl>https://github.com/$(GitHubUser)/$(GitHubRepo)/releases/download/v$(AppVersion)/$(ZipFileName)</ZipUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Views\UpdateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>
